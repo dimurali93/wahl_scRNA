@@ -55,8 +55,9 @@ ggsave("Integrated_All.png")
 dev.off()
 
 DefaultAssay(snRNA.combined) <- "RNA"
-dir.create(path)
 path = "/home/divya/dimurali/wahl_scRNA/CombinedIntegrated_postQC/"
+dir.create(path)
+
 snRNA.combined <-
   genPostFilteredFeaturePlots(snRNA.combined, "CombinedIntegrated_postQC", markers, path)
 
@@ -165,10 +166,12 @@ FeatureScatter(
 # ) + NoLegend()
 # ggsave("ClusterAnnotation.png")
 # dev.off()
-save(snRNA.combined, file = "scRNA_QCed_annotated_integrated.RData")
+save(snRNA.combined, file="scRNA_QCed_annotated_integrated.RData")
 
 
 source("~/dimurali/wahl_scRNA/scripts/functions/custom_seurat_functions.R")
+source("~/dimurali/wahl_scRNA/scripts/functions/GetPalette.R")
+
 plot_integrated_clusters(snRNA.combined)
 ggsave("FrequencyPlot.png")
 
