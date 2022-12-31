@@ -55,7 +55,7 @@ ggsave("Integrated_All.png")
 dev.off()
 
 DefaultAssay(snRNA.combined) <- "RNA"
-path = "/home/divya/dimurali/wahl_scRNA/CombinedIntegrated_postQC/"
+path = "/home/divya/dimurali/wahl_scRNA/seurat/CombinedIntegrated_postQC/"
 dir.create(path)
 
 snRNA.combined <-
